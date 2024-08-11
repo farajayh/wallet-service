@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_no');
             $table->string('brand_name');
-            $table->string('brand_description');
+            $table->text('brand_description');
             $table->string('address');
             $table->string('city');
             $table->string('state');

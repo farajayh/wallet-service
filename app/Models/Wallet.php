@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+
 use App\Models\Transaction;
 
 class Wallet extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
+
+    protected $fillable = ['name', 'currency'];
+
+    protected $hidden = ['owner_type'];
+
 
     public function owner(): MorphTo
     {

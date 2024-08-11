@@ -15,6 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('wallet_id');
             $table->decimal('amount', 15, 2);
+            $table->decimal('result_balance', 15,  2);
+            $table->enum('type', ['DEBIT', 'CREDIT']);
             $table->string('narration')->nullable();
             $table->timestamps();
 

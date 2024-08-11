@@ -10,7 +10,10 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 use Illuminate\Http\JsonResponse;
 
-class CustomerRequest extends FormRequest
+use Illuminate\Validation\Rule;
+use App\Currency;
+
+class WalletRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,34 +30,9 @@ class CustomerRequest extends FormRequest
      */
     public function rules(): array
     {
-        return ($this->isMethod('POST') ? $this->store() : $this->update());
-    }
-
-    public function store(): array
-    {
         return [
-            'name'          => ['required', 'string', 'min:3', 'max:100'],
-            'email'         => ['required', 'string', 'email', 'max:100', 'unique:customers'],
-            'phone_no'      => ['required', 'phone:INTERNATIONAL'],
-            'address'       => ['required', 'string', 'max:255'],
-            'city'          => ['required', 'string', 'max:100'],
-            'state'         => ['required', 'string', 'max:100'],
-            'country'       => ['required', 'string', 'max:100'],
-            'postal_code'   => ['required', 'digits:6'],
-        ];
-    }
-
-    public function update(): array
-    {
-        return [
-            'name'          => ['string', 'min:3', 'max:100'],
-            'email'         => ['string', 'email', 'max:100'],
-            'phone_no'      => ['phone:INTERNATIONAL'],
-            'address'       => ['string', 'max:255'],
-            'city'          => ['string', 'max:100'],
-            'state'         => ['string', 'max:100'],
-            'country'       => ['string', 'max:100'],
-            'postal_code'   => ['digits:6'],
+            'name'      => ['required','string', 'min:3', 'max:100'],
+            'currency'  => [Rule::enum(Currency::class)],
         ];
     }
 

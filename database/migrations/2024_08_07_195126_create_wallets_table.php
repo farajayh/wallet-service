@@ -20,6 +20,8 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->decimal('balance', 15, 2)->default(0.00);
             $table->timestamps();
+
+            $table->unique(['owner_id', 'currency']);
         });
     }
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
-use Illuminate\Http\Request;
 
 
 class CustomerController extends Controller
@@ -30,13 +29,13 @@ class CustomerController extends Controller
         //validate input using CustomerRequest form request
         $validated = $request->validated();
 
-        $customer = new Customer();
+        $customer = (new Customer())->create($validated);
 
-        if($customer->create($validated)){
+        if($customer){
             $response = [
                 'status'  => true,
                 'message' => "New customer created successfully",
-                'data'    => $customer->only(['id', 'name', 'email'])
+                'data'    => $customer
             ];
 
             return response()->json($response, 201);
@@ -69,7 +68,7 @@ class CustomerController extends Controller
         //validate input using CustomerRequest form request
         $validated = $request->validated();
 
-        if($customer->create($validated)){
+        if($customer->update($validated)){
             $response = [
                 'status'  => true,
                 'message' => "Customer updated successfully",
@@ -95,7 +94,7 @@ class CustomerController extends Controller
         if($customer->delete()){
             return response()->json([
                 'status'  => true,
-                'message' => "Success",
+                'message' => "Customer deleted successfully",
             ], 200);
         }
 

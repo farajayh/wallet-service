@@ -5,17 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 use App\Models\Wallet;
 
 class Customer extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name', 'email', 'phone_no', 'address',
+        'city', 'state', 'country', 'postal_code'
+    ];
 
     public function wallets()
     {
-        $this->morphMany(Wallet::class, 'owner');
+        return $this->morphMany(Wallet::class, 'owner');
     }
 }
