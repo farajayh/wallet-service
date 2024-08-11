@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\WalletRequest;
 use App\Http\Requests\WalletTransactionRequest;
 
@@ -19,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 
 class WalletController extends Controller
 {
+    // set the default currency for wallets
     private $defaultCurrency = Currency::NGN;
 
     /**
@@ -46,11 +46,17 @@ class WalletController extends Controller
         ], 200);
     }
 
+    /**
+     * Create a wallet for a customer
+     */
     public function createCustomerWallet(WalletRequest $request, Customer $customer)
     {
         return $this->createWallet($customer, $request->validated());
     }
 
+    /**
+     * Display a customer's wallets
+     */
     public function getCustomerWallet(Customer $customer)
     {
         $wallets = $customer->wallets()->simplePaginate(10);
@@ -61,11 +67,17 @@ class WalletController extends Controller
         ], 200);
     }
 
+    /**
+     * Create a wallet for a merchant
+     */
     public function createMerchantWallet(WalletRequest $request, Merchant $merchant)
     {
         return $this->createWallet($merchant, $request->validated());
     }
 
+    /**
+     * Display a merchant's wallets
+     */
     public function getMerchantWallet(Merchant $merchant)
     {
         $wallets = $merchant->wallets()->simplePaginate(10);
@@ -76,6 +88,9 @@ class WalletController extends Controller
         ], 200);
     }
 
+    /**
+     * Credit a wallet
+     */
     public function creditWallet(WalletTransactionRequest $request, Wallet $wallet)
     {
         $amount = $request->validated()['amount'];
@@ -83,11 +98,15 @@ class WalletController extends Controller
         return $this->executeWalletTransaction($wallet, $amount, WalletTransactionType::CREDIT, $narration);
     }
 
+    /**
+     * Debit wallet
+     */
     public function debitWallet(WalletTransactionRequest $request, Wallet $wallet)
     {
         $amount = $request->validated()['amount'];
         $narration = $request->validated()['narration'];
 
+        // ensure that the wallet's balance is not less than the debit amount, to prevent negative balance
         if ($amount > $wallet->balance) {
             return response()->json([
                 'status'  => false,
@@ -96,18 +115,19 @@ class WalletController extends Controller
             ], 422);
         }
         
-        $amount = $amount * -1;
+        $amount = $amount * -1;        
         return $this->executeWalletTransaction($wallet, $amount, WalletTransactionType::DEBIT, $narration);
     }
 
 
+    /**
+     * Display transactions for a wallet
+     */
     public function walletTransactionHistory(Wallet $wallet){
         $transactions = $wallet->transactions()
             ->selectRaw('id, wallet_id, abs(amount) as amount, result_balance, type, narration, created_at')
             ->orderBy('created_at', 'desc')
             ->simplePaginate(10);
-
-        
 
         return response()->json([
             'status'  => true,
@@ -116,8 +136,14 @@ class WalletController extends Controller
         ], 200);
     }
 
+    /**
+     * Wallet creation logic
+     */
     private function createWallet(Customer|Merchant $owner, $walletDetails){
+        // validate currency if provided, default to the defined default currency if not provided
         $currency = $walletDetails['currency'] ?? $this->defaultCurrency;
+
+        // ensure a customer or merchant can create only one wallet for a given currency
         if($owner->wallets()->where('currency',  $currency)->first()){
             return response()->json([
                 'status'  => false,
@@ -125,6 +151,7 @@ class WalletController extends Controller
             ], 422);
         }
 
+        // create the wallet
         $wallet = $owner->wallets()->create($walletDetails);
 
         if($wallet){            
@@ -138,17 +165,21 @@ class WalletController extends Controller
         return response()->json([
             'status'  => false,
             'message' => "Failed to create wallet",
-            'data'    => null
         ], 500);
     }
 
+    /**
+     * Wallet transaction execution logic
+     */
     private function executeWalletTransaction(Wallet $wallet, $amount, $type, $narration){
         try{
+            // run in a transaction to ensure consistency
             DB::transaction(function () use ($wallet, $amount, $type, $narration) {
-            
+                // update wallet balance
                 $wallet->balance += $amount;
                 $wallet->save();
     
+                // create transaction record
                 $transaction = new Transaction();
                 $transaction->wallet_id = $wallet->id;
                 $transaction->type = $type;

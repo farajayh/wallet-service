@@ -18,9 +18,6 @@ class Wallet extends Model
 
     protected $fillable = ['name', 'currency'];
 
-    protected $hidden = ['owner_type'];
-
-
     public function owner(): MorphTo
     {
         return $this->morphTo();
@@ -29,5 +26,17 @@ class Wallet extends Model
     public function transactions(): hasMany
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    public function getOwnerTypeAttribute($value)
+    {
+        switch ($value) {
+            case \App\Models\Customer::class:
+                return 'Customer';
+            case \App\Models\Merchant::class:
+                return 'Merchant';
+            default:
+                return '';
+        }
     }
 }

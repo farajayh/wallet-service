@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use App\Console\Commands\VerifyWalletsBalance;
+use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote')->hourly();
+
+// Routine to check for wallets with inconsitent balances. Runs daily at 00:00 (midnight)
+Schedule::command('wallet:verify-wallets-balance')->daily();

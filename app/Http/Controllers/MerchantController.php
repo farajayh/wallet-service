@@ -29,6 +29,7 @@ class MerchantController extends Controller
         //validate input using MerchantRequest form request
         $validated = $request->validated();
 
+        // create a new merchant
         $merchant = (new Merchant())->create($validated);
 
         if($merchant){

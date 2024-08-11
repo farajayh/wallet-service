@@ -29,6 +29,7 @@ class CustomerController extends Controller
         //validate input using CustomerRequest form request
         $validated = $request->validated();
 
+        // create a new customer
         $customer = (new Customer())->create($validated);
 
         if($customer){
