@@ -41,6 +41,8 @@ https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
 - Create the .env file for environment variables: cp .env.example .env or copy .env.example .env
 - Install dependencies: composer install
 - Generate application key: php artisan key:generate
+- Make sure MySQL is running on your machine
+- Enter the MySQL credentials in the .env file
 - Run database migration: php artisan migrate
 - To run tests, do: php artisan test
 - Seed the database: php artisan db:seed
