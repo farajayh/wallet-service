@@ -33,6 +33,8 @@ The database ERD is located at the repository root as Database_ERD.png
 ## API Documentation
 https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
 
+* The postman collection is located at the repository root as wallet-service.postman_collection.json
+
 ## HOW TO RUN
 - Clone this repository locally: git clone https://github.com/farajayh/wallet-service.git
 - CD into the application directory
