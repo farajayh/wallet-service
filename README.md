@@ -24,7 +24,7 @@ Records of inconsistent wallets are stored on a CSV file in storage/app folder.
 
 ## Assumptions
 It is assumed that the e-commerce application has an authentication service that issues authentication tokens for authenticating requests to this service.
-Requests to the service will be checked for authentication token and the token will be validated using the key of the auth service, but that is not covered here.
+Requests to this service will be checked for authentication token and the token will be validated using the key of the auth service, but that is not covered here.
 
 ## Database ERD
 ![Database_ERD.png](https://github.com/farajayh/wallet-service/blob/main/Database_ERD.png?raw=true)
