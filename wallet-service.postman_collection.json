@@ -1,0 +1,2098 @@
+{
+	"info": {
+		"_postman_id": "f24c697b-f86c-45d4-a33c-5093c2c44434",
+		"name": "wallet-service",
+		"description": "Wallet API service for an e-comerce application.\n\nFeatures:\n\n- Cutomer CRUD\n    \n- Merchant CRUD\n    \n- Wallet Creation\n    \n- View wallet details\n    \n- Debiting of wallet\n    \n- Crediting of wallet\n    \n- View wallet transaction history",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9782302",
+		"_collection_link": "https://galactic-shadow-241944.postman.co/workspace/My-Work~7135b0f5-24ad-4204-bac4-e1d586bcd466/collection/9782302-f24c697b-f86c-45d4-a33c-5093c2c44434?action=share&source=collection_link&creator=9782302"
+	},
+	"item": [
+		{
+			"name": "customer-show-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/?page=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns a paginated list of all customers and their details\n\nQuery Parameters:\n\n- page \\[page number for pagination | int | optional\\]"
+			},
+			"response": [
+				{
+					"name": "customer-show-all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 22:59:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe6def-ebb8-4e01-8ded-3eb9526ba3a0\",\n                \"name\": \"Frankie Kemmer\",\n                \"email\": \"Jayson_Swift@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"0644 Rosamond Mountain\",\n                \"city\": \"Port Bridgetteport\",\n                \"state\": \"Wilfredbury\",\n                \"country\": \"Jamaica\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:57:01.000000Z\",\n                \"updated_at\": \"2024-08-11T22:57:01.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n                \"name\": \"Rolando Fahey\",\n                \"email\": \"Alycia.Breitenberg49@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"1953 Fadel Coves\",\n                \"city\": \"Krisbury\",\n                \"state\": \"New Shanie\",\n                \"country\": \"Isle of Man\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:25.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:25.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ed4-013f-487b-be25-bf5f6b478368\",\n                \"name\": \"Shane Kohler\",\n                \"email\": \"Estell_Funk26@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"146 Schuster Junction\",\n                \"city\": \"West Else\",\n                \"state\": \"Titobury\",\n                \"country\": \"Palau\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:31.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:31.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ed6-e74b-4d16-9acf-6e1613a30ec3\",\n                \"name\": \"Cecil Legros\",\n                \"email\": \"Terrence_Auer43@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"9611 Khalid Gateway\",\n                \"city\": \"East Cortney\",\n                \"state\": \"Kansas City\",\n                \"country\": \"Honduras\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:32.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:32.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ed9-38ba-498e-96fa-0a95d0ac44bc\",\n                \"name\": \"Mr. Penny Von\",\n                \"email\": \"Nelle42@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"050 Heathcote Motorway\",\n                \"city\": \"Balistrerichester\",\n                \"state\": \"Hutchinson\",\n                \"country\": \"Trinidad and Tobago\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:34.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:34.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6edb-1d1e-46ce-aa09-b1b144ec3629\",\n                \"name\": \"Shaun Wisozk\",\n                \"email\": \"Dean.Mayer11@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"0400 Nolan Station\",\n                \"city\": \"Port Jacky\",\n                \"state\": \"Krajcikview\",\n                \"country\": \"Lithuania\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:35.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:35.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6edc-ef57-485a-81a0-cdb9c5b556c7\",\n                \"name\": \"Lucas Williamson\",\n                \"email\": \"Berneice_Kovacek6@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"13718 Margarete Plains\",\n                \"city\": \"Rocklin\",\n                \"state\": \"Enolaville\",\n                \"country\": \"Georgia\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:36.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:36.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ede-936a-49d8-815a-515a3955b011\",\n                \"name\": \"Larry Olson\",\n                \"email\": \"Shaun54@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"735 Oberbrunner Mount\",\n                \"city\": \"Ratkeport\",\n                \"state\": \"Janickhaven\",\n                \"country\": \"Liberia\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:38.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:38.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ee0-3460-4a67-b3a0-3061e299bd8e\",\n                \"name\": \"Tricia Ondricka\",\n                \"email\": \"Erling81@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"503 Waters Isle\",\n                \"city\": \"Cristshire\",\n                \"state\": \"Hermannbury\",\n                \"country\": \"Nauru\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:39.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:39.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ee1-e802-4ee9-b792-49948bbf34dd\",\n                \"name\": \"Bennie Erdman\",\n                \"email\": \"Jakob.Koelpin66@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"3676 Cathrine Crescent\",\n                \"city\": \"Lake Leannstad\",\n                \"state\": \"Marquardtview\",\n                \"country\": \"Papua New Guinea\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:40.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:40.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/customers?page=1\",\n        \"from\": 1,\n        \"next_page_url\": \"http://127.0.0.1:8000/api/v1/customers?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/v1/customers\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10\n    }\n}"
+				},
+				{
+					"name": "customer-show-all-page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/customers?page=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:01:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 2,\n        \"data\": [\n            {\n                \"id\": \"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897\",\n                \"name\": \"Audrey Simonis\",\n                \"email\": \"Rickie.Hirthe65@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"2137 Bernhard Fall\",\n                \"city\": \"Cruickshanktown\",\n                \"state\": \"South Lucienne\",\n                \"country\": \"Saint Martin\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:41.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:41.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ee5-3655-4c7a-a5b4-4c71aa196e5f\",\n                \"name\": \"Dr. Antonia Ruecker\",\n                \"email\": \"Adriel.Hammes86@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"8291 Kayden Road\",\n                \"city\": \"New Cletus\",\n                \"state\": \"Port Mariana\",\n                \"country\": \"Bosnia and Herzegovina\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:42.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:42.000000Z\"\n            },\n            {\n                \"id\": \"9cbe6ee6-f1f7-4571-bb5d-5016e6906409\",\n                \"name\": \"Alicia Williamson\",\n                \"email\": \"Charles.Hoeger@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"address\": \"78367 Jessika Roads\",\n                \"city\": \"Hamilton\",\n                \"state\": \"Urielburgh\",\n                \"country\": \"Malta\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T22:59:43.000000Z\",\n                \"updated_at\": \"2024-08-11T22:59:43.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/customers?page=1\",\n        \"from\": 11,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/customers\",\n        \"per_page\": 10,\n        \"prev_page_url\": \"http://127.0.0.1:8000/api/v1/customers?page=1\",\n        \"to\": 13\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/:customer_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						":customer_id"
+					],
+					"variable": [
+						{
+							"key": "customer_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns details of a customer specified by the customer_id path variable\n\nPath Variables:\n\n- customer_id \\[id of customer to show | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "customer-show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers/9cbe6ee3-ad62-4c1d-961a-6e8febfc2897",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:02:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897\",\n        \"name\": \"Audrey Simonis\",\n        \"email\": \"Rickie.Hirthe65@yahoo.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"address\": \"2137 Bernhard Fall\",\n        \"city\": \"Cruickshanktown\",\n        \"state\": \"South Lucienne\",\n        \"country\": \"Saint Martin\",\n        \"postal_code\": \"100111\",\n        \"created_at\": \"2024-08-11T22:59:41.000000Z\",\n        \"updated_at\": \"2024-08-11T22:59:41.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomFullName}}\",\r\n    \"email\" : \"{{$randomEmail}}\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"address\" : \"{{$randomStreetAddress}}\",\r\n    \"city\" : \"{{$randomCity}}\",\r\n    \"state\" : \"{{$randomCity}}\",\r\n    \"country\" : \"{{$randomCountry}}\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				},
+				"description": "Creates a customer\n\nRequest Fields:\n\n- name \\[customer name | string | required\\]\n    \n- email \\[customer email | string | required\\]\n    \n- phone_no \\[customer phone number| string, format: +2349099223411 | required\\]\n    \n- address \\[customer address | string | required\\]\n    \n- city \\[customer city | string | required\\]\n    \n- state \\[customer state | string | required\\]\n    \n- country \\[customer country | string | required\\]\n    \n- postal_code \\[customer postal code| int, 6 digits| required\\]"
+			},
+			"response": [
+				{
+					"name": "customer-create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Lindsey Bernhard\",\r\n    \"email\" : \"Antonietta.Collier75@hotmail.com\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"address\" : \"3328 Henriette Mountains\",\r\n    \"city\" : \"Zenafurt\",\r\n    \"state\" : \"Bernhardbury\",\r\n    \"country\" : \"Malaysia\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 22:57:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"New customer created successfully\",\n    \"data\": {\n        \"name\": \"Frankie Kemmer\",\n        \"email\": \"Jayson_Swift@yahoo.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"address\": \"0644 Rosamond Mountain\",\n        \"city\": \"Port Bridgetteport\",\n        \"state\": \"Wilfredbury\",\n        \"country\": \"Jamaica\",\n        \"postal_code\": \"100111\",\n        \"id\": \"9cbe6def-ebb8-4e01-8ded-3eb9526ba3a0\",\n        \"updated_at\": \"2024-08-11T22:57:01.000000Z\",\n        \"created_at\": \"2024-08-11T22:57:01.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomFullName}}\",\r\n    \"email\" : \"{{$randomEmail}}\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"address\" : \"{{$randomStreetAddress}}\",\r\n    \"city\" : \"{{$randomCity}}\",\r\n    \"state\" : \"{{$randomCity}}\",\r\n    \"country\" : \"{{$randomCountry}}\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/:customer_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						":customer_id"
+					],
+					"variable": [
+						{
+							"key": "customer_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Updates details of the customer specified by the customer_id path variable\n\nPath Variables:\n\n- customer_id \\[id of customer to update | string | required\\]\n    \n\nRequest Fields:\n\n- name \\[customer name | string | optional\\]\n    \n- email \\[customer email | string | optional\\]\n    \n- phone_no \\[customer phone number| string, format: +2349099223411 | optional\\]\n    \n- address \\[customer address | string | optional\\]\n    \n- city \\[customer city | string | optional\\]\n    \n- state \\[customer state | string | optional\\]\n    \n- country \\[customer country | string | optional\\]\n    \n- postal_code \\[customer postal code| int, 6 digits | optional\\]"
+			},
+			"response": [
+				{
+					"name": "customer-update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Derrick Haley\",\r\n    \"email\" : \"Felicity.Gutmann23@yahoo.com\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"address\" : \"094 Yvette Roads\",\r\n    \"city\" : \"West Savion\",\r\n    \"state\" : \"New Ollieport\",\r\n    \"country\" : \"Norway\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers/9cbe6ee3-ad62-4c1d-961a-6e8febfc2897",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:04:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Customer updated successfully\",\n    \"data\": {\n        \"id\": \"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897\",\n        \"name\": \"Elisa Bernier PhD\",\n        \"email\": \"Yasmeen_Dare@yahoo.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"address\": \"9820 Darrell Lake\",\n        \"city\": \"Hackettville\",\n        \"state\": \"Thompsonhaven\",\n        \"country\": \"Mauritania\",\n        \"postal_code\": \"100111\",\n        \"created_at\": \"2024-08-11T22:59:41.000000Z\",\n        \"updated_at\": \"2024-08-11T23:04:39.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/:customer_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						":customer_id"
+					],
+					"variable": [
+						{
+							"key": "customer_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Deletes the customer specified by the customer_id path variable\n\nPath Variables:\n\n- customer_id \\[id of customer to delete | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "customer-delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers/9cbe6ee3-ad62-4c1d-961a-6e8febfc2897",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ee3-ad62-4c1d-961a-6e8febfc2897"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:05:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Customer deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-create-wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomWord}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/:customer_id/wallets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						":customer_id",
+						"wallets"
+					],
+					"variable": [
+						{
+							"key": "customer_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Creates a wallet for the customer specified by the customer_id path variable\n\nPath Variables:\n\n- customer_id \\[id of customer for the wallet | string | required\\]\n    \n\nRequest Fields:\n\n- name \\[wallet name | string | required \\]\n    \n- currency \\[wallet currency | string | optional | allowed values: USD, EUR, GBP, NGN\\]"
+			},
+			"response": [
+				{
+					"name": "customer-create-wallet-currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"withdrawal\",\r\n    \"currency\": \"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers/9cbe6ecb-12d0-48d3-b965-d9a1bb97331a/wallets",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a",
+								"wallets"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:20:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Wallet created successfully\",\n    \"data\": {\n        \"name\": \"Buckinghamshire\",\n        \"currency\": \"USD\",\n        \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n        \"owner_type\": \"Customer\",\n        \"id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n        \"updated_at\": \"2024-08-11T23:20:32.000000Z\",\n        \"created_at\": \"2024-08-11T23:20:32.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "customer-create-wallet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"{{$randomWord}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/customers/9cbe6ecb-12d0-48d3-b965-d9a1bb97331a/wallets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a",
+								"wallets"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:32:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Wallet created successfully\",\n    \"data\": {\n        \"name\": \"copy\",\n        \"currency\": \"NGN\",\n        \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n        \"owner_type\": \"Customer\",\n        \"id\": \"9cbe7a9f-11c3-45e8-867a-becaf3e0b735\",\n        \"updated_at\": \"2024-08-11T23:32:29.000000Z\",\n        \"created_at\": \"2024-08-11T23:32:29.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "customer-show-wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/customers/:customer_id/wallets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						":customer_id",
+						"wallets"
+					],
+					"variable": [
+						{
+							"key": "customer_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns all the wallets for the customer specified by the customer_id path variable\n\nPath Variables:\n\n- customer_id \\[id of customer for the wallet | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "customer-show-wallets",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/customers/9cbe6ecb-12d0-48d3-b965-d9a1bb97331a/wallets",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a",
+								"wallets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:20:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"name\": \"Buckinghamshire\",\n                \"currency\": \"USD\",\n                \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n                \"owner_type\": \"Customer\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:20:32.000000Z\",\n                \"updated_at\": \"2024-08-11T23:20:32.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/customers/9cbe6ecb-12d0-48d3-b965-d9a1bb97331a/wallets?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/customers/9cbe6ecb-12d0-48d3-b965-d9a1bb97331a/wallets\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-show-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants"
+					]
+				},
+				"description": "Returns a paginated list of all merchants and their details\n\nQuery Parameters:\n\n- page \\[page number for pagination | int | optional\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-show-all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:35:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe7b5c-22fd-4580-93c4-50df381f9461\",\n                \"name\": \"Gabriel Gleichner\",\n                \"email\": \"Fanny.Bergnaum84@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Flatley LLC\",\n                \"brand_description\": \"Sunt dolores laboriosam sed.\",\n                \"address\": \"71134 Brenden Views\",\n                \"city\": \"Armstrongchester\",\n                \"state\": \"Sipesburgh\",\n                \"country\": \"Palau\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:34:33.000000Z\",\n                \"updated_at\": \"2024-08-11T23:34:33.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n                \"name\": \"Tara Herzog\",\n                \"email\": \"Anya_Stoltenberg@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Wuckert, Oberbrunner and Boehm\",\n                \"brand_description\": \"Laudantium pariatur voluptates rerum autem.\",\n                \"address\": \"12003 Shields Groves\",\n                \"city\": \"Emilyberg\",\n                \"state\": \"Troy\",\n                \"country\": \"Belarus\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:20.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:20.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7ba6-528a-416d-8bf0-105510f28293\",\n                \"name\": \"Ms. Shawna Marquardt\",\n                \"email\": \"Destany_Hermiston84@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Moore, Herzog and Wilderman\",\n                \"brand_description\": \"Blanditiis omnis nemo velit veritatis incidunt dolores rerum.\",\n                \"address\": \"7416 Hilpert Plains\",\n                \"city\": \"Carolanneshire\",\n                \"state\": \"Sadieville\",\n                \"country\": \"Ghana\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:22.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:22.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7ba8-9d90-4599-b1ce-a6f0c6502539\",\n                \"name\": \"Sonja Goyette\",\n                \"email\": \"Kelsi_Kautzer93@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Mayert, Graham and Mann\",\n                \"brand_description\": \"Necessitatibus aut dignissimos autem.\",\n                \"address\": \"861 Hilpert Lane\",\n                \"city\": \"Lake Issac\",\n                \"state\": \"Palatine\",\n                \"country\": \"South Georgia and the South Sandwich Islands\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:23.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:23.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7baa-a3a1-4461-916d-8290ba45c063\",\n                \"name\": \"Leah Heller\",\n                \"email\": \"Allen65@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Halvorson - Volkman\",\n                \"brand_description\": \"Corporis sequi magni ratione dicta dolorem iure.\",\n                \"address\": \"4072 Barrows Light\",\n                \"city\": \"North Ethyl\",\n                \"state\": \"East Joany\",\n                \"country\": \"United Kingdom\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:25.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:25.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bac-8ffa-4ace-87e9-a350b7af0b09\",\n                \"name\": \"Vincent Koss\",\n                \"email\": \"Ezequiel64@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Nienow - Ankunding\",\n                \"brand_description\": \"Odit ea possimus voluptatem voluptas quis id enim commodi.\",\n                \"address\": \"31790 Frances Mills\",\n                \"city\": \"Port Hilda\",\n                \"state\": \"Arecibo\",\n                \"country\": \"Falkland Islands (Malvinas)\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:26.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:26.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bae-9d2e-489c-b7d3-9dd2807d7f1f\",\n                \"name\": \"Kenneth Hoeger\",\n                \"email\": \"Adeline.Halvorson21@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Barrows - Towne\",\n                \"brand_description\": \"Voluptate ut voluptatum at molestiae ex.\",\n                \"address\": \"06205 Morissette Groves\",\n                \"city\": \"Karenland\",\n                \"state\": \"Gleichnerchester\",\n                \"country\": \"Nauru\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:27.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:27.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bb0-7f6d-4a4f-bcf3-284044e6d000\",\n                \"name\": \"Miss Jermaine Conroy\",\n                \"email\": \"Arden81@yahoo.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Kertzmann - Huels\",\n                \"brand_description\": \"Neque sed ut delectus nihil voluptas et.\",\n                \"address\": \"403 Schamberger Square\",\n                \"city\": \"Sauerborough\",\n                \"state\": \"Lewisville\",\n                \"country\": \"Czech Republic\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:28.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:28.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bb2-64a0-4c34-ae28-8801e2d5a385\",\n                \"name\": \"Angelo Baumbach\",\n                \"email\": \"Malika47@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Koss Group\",\n                \"brand_description\": \"Deserunt et sunt unde at velit illo pariatur ut.\",\n                \"address\": \"8301 Fadel Valley\",\n                \"city\": \"Magdalenchester\",\n                \"state\": \"South Trevion\",\n                \"country\": \"Saudi Arabia\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:30.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:30.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bb4-1174-439f-b084-bb3d6b5ceabf\",\n                \"name\": \"Ms. Monica Kris\",\n                \"email\": \"Jaime_Rath82@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Hills, Greenfelder and Wolf\",\n                \"brand_description\": \"Nesciunt atque incidunt perspiciatis.\",\n                \"address\": \"77563 Antone Gardens\",\n                \"city\": \"South Dashawn\",\n                \"state\": \"Brownsville\",\n                \"country\": \"Mongolia\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:31.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:31.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/merchants?page=1\",\n        \"from\": 1,\n        \"next_page_url\": \"http://127.0.0.1:8000/api/v1/merchants?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/v1/merchants\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10\n    }\n}"
+				},
+				{
+					"name": "merchant-show-all-page",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/merchants?page=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"merchants"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:36:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 2,\n        \"data\": [\n            {\n                \"id\": \"9cbe7bb6-0a0b-4257-a4e7-766abb602e93\",\n                \"name\": \"Becky O'Hara\",\n                \"email\": \"Nikki.Wolf46@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Kreiger - Lockman\",\n                \"brand_description\": \"Est similique ea eveniet voluptatem quasi est omnis repudiandae praesentium.\",\n                \"address\": \"21751 Krystal Cove\",\n                \"city\": \"Gilbertotown\",\n                \"state\": \"Sterling Heights\",\n                \"country\": \"Singapore\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:32.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:32.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bb7-b683-4a84-895d-328598be3a58\",\n                \"name\": \"Carlton Flatley\",\n                \"email\": \"Nona.Powlowski@gmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Auer Inc\",\n                \"brand_description\": \"Aspernatur impedit voluptate rem id non voluptas.\",\n                \"address\": \"611 Roel Creek\",\n                \"city\": \"Apple Valley\",\n                \"state\": \"Jasminberg\",\n                \"country\": \"Bahrain\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:33.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:33.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bb9-58c5-4e6d-be18-5b25e5bd86a0\",\n                \"name\": \"Timmy Pfeffer\",\n                \"email\": \"Hipolito.Gorczany@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Turner LLC\",\n                \"brand_description\": \"Tempora dignissimos voluptatem dignissimos id illum totam voluptatibus molestiae.\",\n                \"address\": \"30212 Elisha Terrace\",\n                \"city\": \"Hicksville\",\n                \"state\": \"South Khalilberg\",\n                \"country\": \"Israel\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:34.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:34.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7bba-dc15-499a-b4a2-0f3c780ec8fe\",\n                \"name\": \"Alejandro Wisozk\",\n                \"email\": \"Tristin_Bailey@hotmail.com\",\n                \"phone_no\": \"+2349011220000\",\n                \"brand_name\": \"Brakus Group\",\n                \"brand_description\": \"In quae molestias deleniti libero.\",\n                \"address\": \"67085 Nickolas Locks\",\n                \"city\": \"South Nathanial\",\n                \"state\": \"Lake Alfredoville\",\n                \"country\": \"Uzbekistan\",\n                \"postal_code\": \"100111\",\n                \"created_at\": \"2024-08-11T23:35:35.000000Z\",\n                \"updated_at\": \"2024-08-11T23:35:35.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/merchants?page=1\",\n        \"from\": 11,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/merchants\",\n        \"per_page\": 10,\n        \"prev_page_url\": \"http://127.0.0.1:8000/api/v1/merchants?page=1\",\n        \"to\": 14\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants/:merchant_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants",
+						":merchant_id"
+					],
+					"variable": [
+						{
+							"key": "merchant_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns details of a merchant specified by the merchant_id path variable\n\nPath Variables:\n\n- merchant_id \\[id of merchant to show | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants/9cbe7b5c-22fd-4580-93c4-50df381f9461",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7b5c-22fd-4580-93c4-50df381f9461"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:37:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"9cbe7b5c-22fd-4580-93c4-50df381f9461\",\n        \"name\": \"Gabriel Gleichner\",\n        \"email\": \"Fanny.Bergnaum84@hotmail.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"brand_name\": \"Flatley LLC\",\n        \"brand_description\": \"Sunt dolores laboriosam sed.\",\n        \"address\": \"71134 Brenden Views\",\n        \"city\": \"Armstrongchester\",\n        \"state\": \"Sipesburgh\",\n        \"country\": \"Palau\",\n        \"postal_code\": \"100111\",\n        \"created_at\": \"2024-08-11T23:34:33.000000Z\",\n        \"updated_at\": \"2024-08-11T23:34:33.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomFullName}}\",\r\n    \"email\" : \"{{$randomEmail}}\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"brand_name\" : \"{{$randomCompanyName}}\",\r\n    \"brand_description\" : \"{{$randomLoremSentence}}\",\r\n    \"address\" : \"{{$randomStreetAddress}}\",\r\n    \"city\" : \"{{$randomCity}}\",\r\n    \"state\" : \"{{$randomCity}}\",\r\n    \"country\" : \"{{$randomCountry}}\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants"
+					]
+				},
+				"description": "Creates a merchant\n\nRequest Fields:\n\n- name \\[merchant name | string | required\\]\n    \n- email \\[merchant email | string | required\\]\n    \n- phone_no \\[merchant phone number| string, format: +2349099223411 | required\\]\n    \n- brand_name \\[merchant address | string | required\\]\n    \n- brand_description \\[merchant address | string | required\\]\n    \n- address \\[merchant address | string | required\\]\n    \n- city \\[merchant city | string | required\\]\n    \n- state \\[merchant state | string | required\\]\n    \n- country \\[merchant country | string | required\\]\n    \n- postal_code \\[merchant postal code| int, 6 digits | required\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Marianne Rau\",\r\n    \"email\" : \"Orie.Moen@hotmail.com\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"brand_name\" : \"Halvorson Inc\",\r\n    \"brand_description\" : \"Sequi occaecati officiis excepturi iusto recusandae eos.\",\r\n    \"address\" : \"469 Bode Turnpike\",\r\n    \"city\" : \"Ignacioton\",\r\n    \"state\" : \"North Richland Hills\",\r\n    \"country\" : \"Monaco\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:34:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"New merchant created successfully\",\n    \"data\": {\n        \"name\": \"Gabriel Gleichner\",\n        \"email\": \"Fanny.Bergnaum84@hotmail.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"brand_name\": \"Flatley LLC\",\n        \"brand_description\": \"Sunt dolores laboriosam sed.\",\n        \"address\": \"71134 Brenden Views\",\n        \"city\": \"Armstrongchester\",\n        \"state\": \"Sipesburgh\",\n        \"country\": \"Palau\",\n        \"postal_code\": \"100111\",\n        \"id\": \"9cbe7b5c-22fd-4580-93c4-50df381f9461\",\n        \"updated_at\": \"2024-08-11T23:34:33.000000Z\",\n        \"created_at\": \"2024-08-11T23:34:33.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomFullName}}\",\r\n    \"email\" : \"{{$randomEmail}}\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"brand_name\" : \"{{$randomCompanyName}}\",\r\n    \"brand_description\" : \"{{$randomLoremSentence}}\",\r\n    \"address\" : \"{{$randomStreetAddress}}\",\r\n    \"city\" : \"{{$randomCity}}\",\r\n    \"state\" : \"{{$randomCity}}\",\r\n    \"country\" : \"{{$randomCountry}}\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants/:merchant_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants",
+						":merchant_id"
+					],
+					"variable": [
+						{
+							"key": "merchant_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Updates details of the merchant specified by the merchant_id path variable\n\nPath Variables:\n\n- merchant_id \\[id of merchant to update | string | required\\]\n    \n\nRequest Fields:\n\n- name \\[merchant name | string | optional\\]\n    \n- email \\[merchant email | string | optional\\]\n    \n- phone_no \\[merchant phone number| string, format: +2349099223411 | optional\\]\n    \n- brand_name \\[merchant address | string | optional\\]\n    \n- brand_description \\[merchant address | string | optional\\]\n    \n- address \\[merchant address | string | optional\\]\n    \n- city \\[merchant city | string | optional\\]\n    \n- state \\[merchant state | string | optional\\]\n    \n- country \\[merchant country | string | optional\\]\n    \n- postal_code \\[merchant postal code| int, 6 digits | optional\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Eric Marks\",\r\n    \"email\" : \"Wellington.Pfannerstill@gmail.com\",\r\n    \"phone_no\" : \"+2349011220000\",\r\n    \"brand_name\" : \"Oberbrunner and Sons\",\r\n    \"brand_description\" : \"Velit facere fuga.\",\r\n    \"address\" : \"1496 Barton Cliff\",\r\n    \"city\" : \"Bufordside\",\r\n    \"state\" : \"Overland Park\",\r\n    \"country\" : \"Bouvet Island (Bouvetoya)\",\r\n    \"postal_code\" : \"100111\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants/9cbe7b5c-22fd-4580-93c4-50df381f9461",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7b5c-22fd-4580-93c4-50df381f9461"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:37:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Merchant updated successfully\",\n    \"data\": {\n        \"id\": \"9cbe7b5c-22fd-4580-93c4-50df381f9461\",\n        \"name\": \"Robin Jast\",\n        \"email\": \"Alexandre.Keebler76@gmail.com\",\n        \"phone_no\": \"+2349011220000\",\n        \"brand_name\": \"Stark and Sons\",\n        \"brand_description\": \"Omnis exercitationem maiores id voluptate.\",\n        \"address\": \"799 Cary Route\",\n        \"city\": \"Pricetown\",\n        \"state\": \"South Mauricefort\",\n        \"country\": \"Hungary\",\n        \"postal_code\": \"100111\",\n        \"created_at\": \"2024-08-11T23:34:33.000000Z\",\n        \"updated_at\": \"2024-08-11T23:37:34.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants/:merchant_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants",
+						":merchant_id"
+					],
+					"variable": [
+						{
+							"key": "merchant_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Deletes the merchant specified by the merchant_id path variable\n\nPath Variables:\n\n- merchant_id \\[id of merchant to delete | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants/9cbe7b5c-22fd-4580-93c4-50df381f9461",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7b5c-22fd-4580-93c4-50df381f9461"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:38:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Merchant deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-create-wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"{{$randomWord}}\",\r\n    \"currency\" : \"GBP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants/:merchant_id/wallets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants",
+						":merchant_id",
+						"wallets"
+					],
+					"variable": [
+						{
+							"key": "merchant_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Creates a wallet for the merchant specified by the merchant_id path variable\n\nPath Variables:\n\n- merchant_id \\[id of merchant for the wallet | string | required\\]\n    \n\nRequest Fields:\n\n- name \\[wallet name | string | required \\]\n    \n- currency \\[wallet currency | string | optional | allowed values: USD, EUR, GBP, NGN\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-create-wallet-currency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"object-oriented\",\r\n    \"currency\" : \"GBP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants/9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa/wallets",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa",
+								"wallets"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:41:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Wallet created successfully\",\n    \"data\": {\n        \"name\": \"Locks\",\n        \"currency\": \"GBP\",\n        \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n        \"owner_type\": \"Merchant\",\n        \"id\": \"9cbe7db2-2294-43df-b281-5b8f890715e0\",\n        \"updated_at\": \"2024-08-11T23:41:05.000000Z\",\n        \"created_at\": \"2024-08-11T23:41:05.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "merchant-create-wallet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"{{$randomWord}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/merchants/9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa/wallets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa",
+								"wallets"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:41:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Wallet created successfully\",\n    \"data\": {\n        \"name\": \"Table\",\n        \"currency\": \"NGN\",\n        \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n        \"owner_type\": \"Merchant\",\n        \"id\": \"9cbe7ddd-f444-4c6a-925d-ef17e092ce2e\",\n        \"updated_at\": \"2024-08-11T23:41:34.000000Z\",\n        \"created_at\": \"2024-08-11T23:41:34.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "merchant-show-wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/merchants/:merchant_id/wallets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"merchants",
+						":merchant_id",
+						"wallets"
+					],
+					"variable": [
+						{
+							"key": "merchant_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns all the wallets for the merchant specified by the merchant_id path variable\n\nPath Variables:\n\n- merchant_id \\[id of merchant for the wallet | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "merchant-get-wallets",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/merchants/9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa/wallets",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchants",
+								"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa",
+								"wallets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:42:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe7ddd-f444-4c6a-925d-ef17e092ce2e\",\n                \"name\": \"Table\",\n                \"currency\": \"NGN\",\n                \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n                \"owner_type\": \"Merchant\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:41:34.000000Z\",\n                \"updated_at\": \"2024-08-11T23:41:34.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7db2-2294-43df-b281-5b8f890715e0\",\n                \"name\": \"Locks\",\n                \"currency\": \"GBP\",\n                \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n                \"owner_type\": \"Merchant\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:41:05.000000Z\",\n                \"updated_at\": \"2024-08-11T23:41:05.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/merchants/9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa/wallets?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/merchants/9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa/wallets\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "wallet-show-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/wallets?page=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"wallets"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns a paginated list of all wallets and their details\n\nQuery Parameters:\n\n- page \\[page number for pagination | int | optional\\]"
+			},
+			"response": [
+				{
+					"name": "wallet-show-all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/wallets",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"wallets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:42:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"name\": \"Buckinghamshire\",\n                \"currency\": \"USD\",\n                \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n                \"owner_type\": \"Customer\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:20:32.000000Z\",\n                \"updated_at\": \"2024-08-11T23:20:32.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7a9f-11c3-45e8-867a-becaf3e0b735\",\n                \"name\": \"copy\",\n                \"currency\": \"NGN\",\n                \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n                \"owner_type\": \"Customer\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:32:29.000000Z\",\n                \"updated_at\": \"2024-08-11T23:32:29.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7db2-2294-43df-b281-5b8f890715e0\",\n                \"name\": \"Locks\",\n                \"currency\": \"GBP\",\n                \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n                \"owner_type\": \"Merchant\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:41:05.000000Z\",\n                \"updated_at\": \"2024-08-11T23:41:05.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7ddd-f444-4c6a-925d-ef17e092ce2e\",\n                \"name\": \"Table\",\n                \"currency\": \"NGN\",\n                \"owner_id\": \"9cbe7ba4-4ebe-4a76-ab96-6ee24ec629fa\",\n                \"owner_type\": \"Merchant\",\n                \"is_active\": 1,\n                \"balance\": \"0.00\",\n                \"created_at\": \"2024-08-11T23:41:34.000000Z\",\n                \"updated_at\": \"2024-08-11T23:41:34.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/wallets?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/wallets\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 4\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "wallet-show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/wallets/:wallet_id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"wallets",
+						":wallet_id"
+					],
+					"variable": [
+						{
+							"key": "wallet_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns details of a wallet specified by the wallet_id path variable\n\nPath Variables:\n\n- wallet_id \\[id of wallet to show | int | required\\]"
+			},
+			"response": [
+				{
+					"name": "wallet-show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"wallets",
+								"9cbe7658-dd69-4fed-a44b-966c82cf5c3e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:44:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n        \"name\": \"Buckinghamshire\",\n        \"currency\": \"USD\",\n        \"owner_id\": \"9cbe6ecb-12d0-48d3-b965-d9a1bb97331a\",\n        \"owner_type\": \"Customer\",\n        \"is_active\": 1,\n        \"balance\": \"0.00\",\n        \"created_at\": \"2024-08-11T23:20:32.000000Z\",\n        \"updated_at\": \"2024-08-11T23:20:32.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "wallet-credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\" : \"4500\",\r\n    \"narration\" : \"sales\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/wallets/:wallet_id/credit",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"wallets",
+						":wallet_id",
+						"credit"
+					],
+					"variable": [
+						{
+							"key": "wallet_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Performs a credit transaction on the wallet specified by the wallet_id path variable\n\nPath Variables:\n\n- wallet_id \\[id of wallet to credit | string\\]\n    \n\nRequest Fields:\n\n- name \\[amount to be credited | decimal | required \\]\n    \n- narration \\[transaction narration | string | optional\\]"
+			},
+			"response": [
+				{
+					"name": "wallet-credit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : \"4000\",\r\n    \"narration\" : \"sales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e/credit",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"wallets",
+								"9cbe7658-dd69-4fed-a44b-966c82cf5c3e",
+								"credit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:44:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Transaction was successful\",\n    \"balance\": 4000\n}"
+				}
+			]
+		},
+		{
+			"name": "wallet-debit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\" : \"3500\",\r\n    \"narration\" : \"bills\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/wallets/:wallet_id/debit",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"wallets",
+						":wallet_id",
+						"debit"
+					],
+					"variable": [
+						{
+							"key": "wallet_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Performs a debit transaction on the wallet specified by the wallet_id path variable\n\nPath Variables:\n\n- wallet_id \\[id of wallet to debit | string\\]\n    \n\nRequest Fields:\n\n- name \\[amount to be debited | decimal | required \\]\n    \n- narration \\[transaction narration | string | optional\\]"
+			},
+			"response": [
+				{
+					"name": "wallet-debit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : \"1000\",\r\n    \"narration\" : \"bills\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e/debit",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"wallets",
+								"9cbe7658-dd69-4fed-a44b-966c82cf5c3e",
+								"debit"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:45:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Transaction was successful\",\n    \"balance\": 12500\n}"
+				}
+			]
+		},
+		{
+			"name": "wallet-transaction-history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/wallets/:wallet_id/history?page=",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"wallets",
+						":wallet_id",
+						"history"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": ""
+						}
+					],
+					"variable": [
+						{
+							"key": "wallet_id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Returns a paginated list of all transactions on the wallet specified by the wallet_id path variable\n\nQuery Parameters:\n\n- page \\[page number for pagination | int | optional\\]\n    \n\nPath Variables:\n\n- wallet_id \\[id of the wallet | string | required\\]"
+			},
+			"response": [
+				{
+					"name": "wallet-transaction-history",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : \"2000\",\r\n    \"narration\" : \"bills\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e/history",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"wallets",
+								"9cbe7658-dd69-4fed-a44b-966c82cf5c3e",
+								"history"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 23:46:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"9cbe7f7e-72ba-4ed7-ae73-30a65ee228ac\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"3500.00\",\n                \"result_balance\": \"8000.00\",\n                \"type\": \"DEBIT\",\n                \"narration\": \"bills\",\n                \"created_at\": \"2024-08-11T23:46:07.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f5f-dff2-4493-86a1-c46ea3363ad6\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"1000.00\",\n                \"result_balance\": \"11500.00\",\n                \"type\": \"DEBIT\",\n                \"narration\": \"bills\",\n                \"created_at\": \"2024-08-11T23:45:47.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f4e-dfd2-49b3-8fa9-a91f5274d75a\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"1000.00\",\n                \"result_balance\": \"12500.00\",\n                \"type\": \"DEBIT\",\n                \"narration\": \"bills\",\n                \"created_at\": \"2024-08-11T23:45:35.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f2c-8015-40aa-9f45-4196b60a2c07\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"4500.00\",\n                \"result_balance\": \"13500.00\",\n                \"type\": \"CREDIT\",\n                \"narration\": \"sales\",\n                \"created_at\": \"2024-08-11T23:45:13.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f1c-2b7d-46e1-915a-582b38bb7e53\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"1000.00\",\n                \"result_balance\": \"9000.00\",\n                \"type\": \"CREDIT\",\n                \"narration\": \"sales\",\n                \"created_at\": \"2024-08-11T23:45:02.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f13-b984-4643-aea3-0a73d11b7534\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"4000.00\",\n                \"result_balance\": \"8000.00\",\n                \"type\": \"CREDIT\",\n                \"narration\": \"sales\",\n                \"created_at\": \"2024-08-11T23:44:57.000000Z\"\n            },\n            {\n                \"id\": \"9cbe7f02-432f-4cc0-bc80-788afcbb609f\",\n                \"wallet_id\": \"9cbe7658-dd69-4fed-a44b-966c82cf5c3e\",\n                \"amount\": \"4000.00\",\n                \"result_balance\": \"4000.00\",\n                \"type\": \"CREDIT\",\n                \"narration\": \"sales\",\n                \"created_at\": \"2024-08-11T23:44:45.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e/history?page=1\",\n        \"from\": 1,\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/wallets/9cbe7658-dd69-4fed-a44b-966c82cf5c3e/history\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 7\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
