@@ -19,7 +19,7 @@ Wallet API service for an e-comerce application.
 
 * View wallet transaction history
 
-* CRON script that runs daily to check walllet transaction history and compares it with wallet balance for inconsistencies.
+* CRON script that runs daily to check wallet transaction history and compares it with wallet balance for inconsistencies.
 Records of inconsistent wallets are stored on a CSV file in storage/app folder.
 
 ## Assumptions
