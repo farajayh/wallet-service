@@ -20,7 +20,7 @@ Wallet API service for an e-comerce application.
 * View wallet transaction history
 
 * CRON script that runs daily to check wallet transaction history and compares it with wallet balance for inconsistencies.
-Records of inconsistent wallets are stored on a CSV file in storage/app folder.
+Records of inconsistent wallets are stored on a CSV file in storage/app folder. (Implemented with Laravel Commands)
 
 ## Assumptions
 It is assumed that the e-commerce application has an authentication service that issues authentication tokens for authenticating requests to this service.
@@ -48,7 +48,7 @@ https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
 - To run tests, do: php artisan test
 - To seed the database: php artisan db:seed
 - Run the application: php artisan serve
-- To schedule running of CRON job, create this cron job entry: * * * * * cd /path-to-the-application-directory && php artisan schedule:run >> /dev/null 2>&1
+- To schedule running of CRON job script, create this cron job entry: * * * * * cd /path-to-the-application-directory && php artisan schedule:run >> /dev/null 2>&1
 - The CRON job can also be run manually by running: php artisan wallet:verify-wallets-balance
 
 ## Technologies Used
