@@ -74,8 +74,11 @@ class VerifyWalletsBalance extends Command
 
             $result .= " $count inconsistent wallets found. File: $filePath";
         }else{
+            // close the output file
+            fclose($file);
+
             // delete created csv file if no inconsistency is found
-            unlink($file);
+            unlink($filePath);
 
             $result .= " No inconsistency found";
         }
