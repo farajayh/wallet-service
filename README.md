@@ -1,9 +1,9 @@
-## Wallet-Service
+# Wallet-Service
 Wallet API Service
 
 Wallet API service for an e-comerce application.
 
-# Features:
+## Features:
 
 * Cutomer CRUD
 
@@ -22,14 +22,14 @@ Wallet API service for an e-comerce application.
 * CRON script that runs daily to check walllet transaction history and compares it with wallet balance for inconsistencies.
 Records of inconsistent wallets are stored on a CSV file in storage/app folder.
 
-# Assumptions
+## Assumptions
 It is assumed that the e-commerce application has an authentication service that issues authentication tokens for authenticating requests to this service.
 Requests to the service will be checked for authentication token and the token will be validated using the key of the auth service, but that is not covered here.
 
-# Database ERD
+## Database ERD
 ![database ERD](https://github.com/farajayh/wallet-service/blob/main/image.jpg?raw=true)
 
-# API Documentation
+## API Documentation
 https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
 
 ## HOW TO RUN
