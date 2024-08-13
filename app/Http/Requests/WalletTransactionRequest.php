@@ -32,4 +32,28 @@ class WalletTransactionRequest extends FormRequest
             'narration' =>  ['string']
         ];
     }
+
+    public function failedValidation(Validator $validator)
+    {
+        $errors = (new ValidationException($validator))->errors();
+
+        throw new HttpResponseException(
+            response()->json([
+                'status'  => false,
+                'message' => "Request Failed",
+                'errors' => $errors
+            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+        );
+    }
+
+    public function failedAuthorization()
+    {
+        throw new HttpResponseException(
+            response()->json([
+                'status'  => false,
+                'message' => "Request Aborted",
+                'errors' => "Not Authorized"
+            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+        );
+    }
 }

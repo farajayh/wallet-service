@@ -34,7 +34,7 @@ class MerchantRequest extends FormRequest
     {
         return [
             'name'                  => ['required', 'string', 'min:3', 'max:100'],
-            'email'                 => ['required', 'string', 'email', 'max:100', 'unique:customers'],
+            'email'                 => ['required', 'string', 'email', 'max:100', 'unique:merchants'],
             'phone_no'              => ['required', 'phone:INTERNATIONAL'],
             'brand_name'            => ['required', 'string', 'min:3', 'max:100'],
             'brand_description'     => ['required', 'string', 'min:3', 'max:1000'],
@@ -50,7 +50,7 @@ class MerchantRequest extends FormRequest
     {
         return [
             'name'                  => ['string', 'min:3', 'max:100'],
-            'email'                 => ['string', 'email', 'max:100', 'unique:customers'],
+            'email'                 => ['string', 'email', 'max:100', 'unique:merchants'],
             'phone_no'              => ['phone:INTERNATIONAL'],
             'brand_name'            => ['string', 'min:3', 'max:100'],
             'brand_description'     => ['string', 'min:3', 'max:1000'],

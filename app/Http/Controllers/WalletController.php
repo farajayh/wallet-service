@@ -140,14 +140,14 @@ class WalletController extends Controller
      * Wallet creation logic
      */
     private function createWallet(Customer|Merchant $owner, $walletDetails){
-        // validate currency if provided, default to the defined default currency if not provided
-        $currency = $walletDetails['currency'] ?? $this->defaultCurrency;
+        // default to the defined default currency if not provided
+        if(!isset($walletDetails['currency'])) $walletDetails['currency'] = $this->defaultCurrency->value;
 
         // ensure a customer or merchant can create only one wallet for a given currency
-        if($owner->wallets()->where('currency',  $currency)->first()){
+        if($owner->wallets()->where('currency',  $walletDetails['currency'])->first()){
             return response()->json([
                 'status'  => false,
-                'message' => "A wallet for $currency already exists",
+                'message' => "A wallet for {$walletDetails['currency']} already exists",
             ], 422);
         }
 

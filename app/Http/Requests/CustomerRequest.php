@@ -48,7 +48,7 @@ class CustomerRequest extends FormRequest
     {
         return [
             'name'          => ['string', 'min:3', 'max:100'],
-            'email'         => ['string', 'email', 'max:100'],
+            'email'         => ['string', 'email', 'max:100', 'unique:customers'],
             'phone_no'      => ['phone:INTERNATIONAL'],
             'address'       => ['string', 'max:255'],
             'city'          => ['string', 'max:100'],
