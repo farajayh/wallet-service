@@ -43,9 +43,10 @@ https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
 - Generate application key: php artisan key:generate
 - Make sure MySQL is running on your machine
 - Enter the MySQL credentials in the .env file
+- Create wallet-service database on your MySQL server
 - Run database migration: php artisan migrate
 - To run tests, do: php artisan test
-- Seed the database: php artisan db:seed
+- To seed the database: php artisan db:seed
 - Run the application: php artisan serve
 - To schedule running of CRON job, create this cron job entry: * * * * * cd /path-to-the-application-directory && php artisan schedule:run >> /dev/null 2>&1
 - The CRON job can also be run manually by running: php artisan wallet:verify-wallets-balance
