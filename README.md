@@ -27,7 +27,7 @@ It is assumed that the e-commerce application has an authentication service that
 Requests to the service will be checked for authentication token and the token will be validated using the key of the auth service, but that is not covered here.
 
 ## Database ERD
-![database ERD](https://github.com/farajayh/wallet-service/blob/main/image.jpg?raw=true)
+![database ERD](https://github.com/farajayh/wallet-service/blob/main/Database_ERD.png?raw=true)
 
 ## API Documentation
 https://documenter.getpostman.com/view/9782302/2sA3s4mVkv
